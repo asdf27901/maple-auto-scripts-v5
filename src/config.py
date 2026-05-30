@@ -91,15 +91,7 @@ config = {
         'min_size': (1280, 720), #支持的最低游戏分辨率
         'resize_to': [(2560, 1440), (1920, 1080), (1600, 900), (1280, 720)], #可选, 如果非16:9自动缩放为 resize_to
     },
-    'links': { # 关于里显示的链接, 可选
-            'default': {
-                'github': 'https://github.com/ok-oldking/ok-py',
-                'discord': 'https://discord.gg/vVyCatEBgA',
-                'share': 'Download from https://github.com/ok-oldking/ok-py',
-                'qq_group':'https://qm.qq.com/q/3Gq4VLvQe',
-                'qq_channel': 'https://pd.qq.com/s/djmm6l44y',
-                'faq': 'https://github.com/ok-oldking/ok-py'
-            }
+    'links': { 
         },
     'screenshots_folder': "screenshots", #截图存放目录, 每次重新启动会清空目录
     'gui_title': 'ok-py',  #窗口名
@@ -111,8 +103,18 @@ config = {
     },
     'version': version, #版本
     'my_app': ['src.globals', 'Globals'], #可选. 全局单例对象, 可以存放加载的模型, 使用og.my_app调用
-    'onetime_tasks': [  # 用户点击触发的任务
-        ["src.tasks.MyOneTimeTask", "MyOneTimeTask"],
-        ["ok", "DiagnosisTask"],
+    'custom_tabs': [
+        # ["src.ui.CustomKeysTab", "CustomKeysTab"]
     ],
+    'onetime_tasks': [  # 用户点击触发的任务
+        ["src.tasks.WashCubeTask", "WashCubeTask"],
+        ["src.tasks.TestCubeTask", "TestCubeTask"],
+        ["src.tasks.WashFireTask", "WashFireTask"],
+        ["src.tasks.CheckImproveTask", "CheckImproveTask"],
+    ],
+    'trigger_tasks': [  # 会不断循环调用run方法的任务
+        # ["src.tasks.MyTriggerTask", "MyTriggerTask"],
+        ["src.tasks.CustomKeysTriggerTask", "CustomKeysTriggerTask"],
+    ],
+    "project_root": os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 }
