@@ -1,5 +1,5 @@
-from enums.LabelEnum import LabelEnum
-from tasks.MyBaseTask import MyBaseTask
+from src.enums.LabelEnum import LabelEnum
+from src.tasks.MyBaseTask import MyBaseTask
 from qfluentwidgets import FluentIcon
 
 

@@ -79,5 +79,13 @@ urllib3==2.5.0
     # via requests
 pyttsx3==2.99
     # via -r requirements.in
+deprecation==2.1.0
+    # via adbutils
+retry2==0.9.5
+    # via adbutils
+decorator==5.3.1
+    # via retry2
+six==1.17.0
+    # via retry2
 adbutils==2.12.0
 #如果支持模拟器则添加这个
